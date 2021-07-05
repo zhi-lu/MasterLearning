@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 在tomcat中 Engine标签代表者servlet引擎,处理Servlet请求 -->
+<!-- 在tomcat中 Service是标签Engine的父结点,用于tomcat提供的服务.服务下应该有许多的Connector对象.-->
+<!--在Context标签中添加属性 reloadable="true"支持热部署.-->
+<Server>
+    <Service name="Catalina">
+        <Engine defaultHost="localHost">
+            <Connector port="9090"
+                       compression="on"
+                       compressionMinSize="20"
+                       onCompressionUserAgents="gozilla,traviata"
+                       compressibleMimeType="text/html,text/xml,text/javascript,application/javascript,text/css,text/plain,text/json"/>
+
+            <Connector port="9091"
+                       compression="on"
+                       compressionMinSize="20"
+                       onCompressionUserAgents="gozilla,traviata"
+                       compressibleMimeType="text/html,text/xml,text/javascript,application/javascript,text/css,text/plain,text/json"
+            />
+            <Connector port="9092"/>
+            <Host name="localHost">
+                <Context path="/resource" docBase="/Users/apple/IdeaProjects/MasterLearning/resource"/>
+                <Context path="/javaweb" docBase="/Users/apple/IdeaProjects/javaweb/web" reloadable="true"/>
+            </Host>
+        </Engine>
+    </Service>
+</Server>

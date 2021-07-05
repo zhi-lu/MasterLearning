@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<web-app>
+    <servlet>
+        <servlet-name>HelloServlet</servlet-name>
+        <servlet-class>com.luzhi.HelloServlet</servlet-class>
+        <init-param>
+            <init-name>author</init-name>
+            <init-value>apple</init-value>
+        </init-param>
+        <init-param>
+            <init-name>site</init-name>
+            <init-value>http://www.luzhi.store</init-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>HelloServlet</servlet-name>
+        <url-pattern>/hello</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ParamServlet</servlet-name>
+        <servlet-class>com.luzhi.ParamServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ParamServlet</servlet-name>
+        <url-pattern>/param</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>HeaderServlet</servlet-name>
+        <servlet-class>com.luzhi.HeaderServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>HeaderServlet</servlet-name>
+        <url-pattern>/header</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SetCookieServlet</servlet-name>
+        <servlet-class>com.luzhi.SetCookieServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>SetCookieServlet</servlet-name>
+        <url-pattern>/setCookie</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>GetCookieServlet</servlet-name>
+        <servlet-class>com.luzhi.GetCookieServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>GetCookieServlet</servlet-name>
+        <url-pattern>/getCookie</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SetSessionServlet</servlet-name>
+        <servlet-class>com.luzhi.SetSessionServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>SetSessionServlet</servlet-name>
+        <url-pattern>/setSession</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>GetSessionServlet</servlet-name>
+        <servlet-class>com.luzhi.GetSessionServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>GetSessionServlet</servlet-name>
+        <url-pattern>/getSession</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ClientJumpServlet</servlet-name>
+        <servlet-class>com.luzhi.ClientJumpServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ClientJumpServlet</servlet-name>
+        <url-pattern>/redirect</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ServerJumpServlet</servlet-name>
+        <servlet-class>com.luzhi.ServerJumpServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ServerJumpServlet</servlet-name>
+        <url-pattern>/serverJump</url-pattern>
+    </servlet-mapping>
+
+    <filter>
+        <filter-name>UrlFilter</filter-name>
+        <filter-class>com.luzhi.UrlFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>UrlFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    <filter>
+        <filter-name>ProfilerFilter</filter-name>
+        <filter-class>com.luzhi.ProfilerFilter</filter-class>
+        <init-param>
+            <init-name>author</init-name>
+            <init-value>apple</init-value>
+        </init-param>
+        <init-param>
+            <init-name>site</init-name>
+            <init-value>http://www.luzhi.store</init-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>ProfilerFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+</web-app>
